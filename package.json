@@ -1,0 +1,13 @@
+{
+  "name": "monorepo",
+  "version": "1.0.0",
+  "description": "test monorepo",
+  "main": "index.js",
+  "scripts": {
+    "start-front": "npm start --prefix front",
+    "start-back": "npm run start --prefix backend",
+    "start": "npm start --prefix front & npm run start --prefix backend"
+  },
+  "author": "",
+  "license": "ISC"
+}
