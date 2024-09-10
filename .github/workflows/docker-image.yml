@@ -25,4 +25,4 @@ jobs:
         with:
           file: ./front/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME_SIMPLE }}/my-front-app:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME_SIMPLE }}/monor-front:latest
