@@ -1,23 +1,20 @@
-# pull official base image
-FROM node:13.12.0-alpine
+# Utilise une version plus récente de Node.js
+FROM node:18-alpine
 
-# set working directory
+# Définit le répertoire de travail dans le conteneur
 WORKDIR /app
 
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-
-# install app dependencies
+# Copie les fichiers de dépendances
 COPY package.json ./
-COPY package-lock.json ./
 
-RUN npm install --silent
-RUN npm install react-scripts@3.4.1 -g --silent
+# Installe les dépendances
+RUN npm install --silent && npm install react-scripts@3.4.1 -g --silent
 
-# add app
+# Copie tout le code de l'application
 COPY . .
 
+# Expose le port 3000 (si ton app tourne sur ce port)
 EXPOSE 3000
 
-# start app
+# Démarre l'application
 CMD ["npm", "start"]
