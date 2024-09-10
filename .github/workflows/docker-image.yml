@@ -23,7 +23,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./front  # Spécifie le dossier du front-end
-          file: ./front/Dockerfile  # Le Dockerfile à utiliser
+          context: ./front
+          file: ./front/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/my-front-app:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME_SIMPLE }}/my-front-app:latest

@@ -1,16 +1,14 @@
 version: '3.7'
 
 services:
-
-  sample:
+  front:
     container_name: front_container
     build:
       context: front/.
       dockerfile: front/Dockerfile
     volumes:
-      - '.:/app'
-      - '/app/node_modules'
+      - './front:/app'  # Monte le code de l'application dans le conteneur
     ports:
-      - 3001:3000
+      - 3001:3000  # Expose le port 3000 du conteneur sur le port 3001 de l'hôte
     environment:
       - CHOKIDAR_USEPOLLING=true
