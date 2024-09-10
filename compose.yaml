@@ -3,9 +3,9 @@ version: '3.7'
 services:
 
   sample:
-    container_name: sample
+    container_name: front_container
     build:
-      context: .
+      context: front/.
       dockerfile: front/Dockerfile
     volumes:
       - '.:/app'
