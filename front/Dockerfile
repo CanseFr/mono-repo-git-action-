@@ -17,4 +17,6 @@ COPY . .
 EXPOSE 3000
 
 # Démarre l'application
-CMD ["npm", "start-front"]
+#CMD ["npm", "start-front"]
+CMD ["pwd"]
+CMD ["ls -la"]
