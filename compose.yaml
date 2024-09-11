@@ -5,7 +5,7 @@ services:
     container_name: front_container
     build:
       context: front/.
-      dockerfile: front/Dockerfile
+      dockerfile: Dockerfile
     volumes:
       - './front:/app'  # Monte le code de l'application dans le conteneur
     ports:
