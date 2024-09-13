@@ -8,11 +8,7 @@ WORKDIR /app
 COPY package.json ./
 
 # Installe les dépendances
-RUN #npm install --silent && npm install react-scripts@3.4.1 -g --silent
-
-RUN npm install --silent && npm install react-scripts@3.4.1 -g --silent \
-    && cd front && npm install --silent \
-    && cd ../back && npm install --silent
+RUN npm install --silent && npm install react-scripts@3.4.1 -g --silent
 
 # Copie tout le code de l'application
 COPY . .
@@ -21,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Démarre l'application
-CMD ["npm", "start"]
+CMD ["npm", "start-front"]
