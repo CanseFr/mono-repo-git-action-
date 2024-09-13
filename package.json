@@ -6,7 +6,7 @@
   "scripts": {
     "start-front": "npm start --prefix front",
     "start-back": "npm run start --prefix backend",
-    "start": "npm start --prefix front & npm run start --prefix backend"
+    "start": "npm start --prefix front"
   },
   "author": "",
   "license": "ISC"
