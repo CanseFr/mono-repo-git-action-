@@ -5,13 +5,13 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Copie les fichiers de dépendances
-COPY package.json ./
+COPY front/package.json ./
 
 # Installe les dépendances
 RUN npm install --silent && npm install react-scripts@3.4.1 -g --silent
 
 # Copie tout le code de l'application
-COPY . .
+COPY ./front .
 
 # Expose le port 3000 (si ton app tourne sur ce port)
 EXPOSE 3000
