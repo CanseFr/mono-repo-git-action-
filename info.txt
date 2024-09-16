@@ -1,1 +1,2 @@
-docker pull --platform linux/amd64 cansefr/monor-front
+docker pull --platform linux/amd64 cansefr/monofront
+
