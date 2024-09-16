@@ -24,4 +24,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ secrets.DOCKER_HUB_TOKEN }}/mono-front:latest
+          tags: ${{ secrets.DOCKER_HUB_TOKEN }}/monofront
