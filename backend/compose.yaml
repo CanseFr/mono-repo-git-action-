@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+
+  sample:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"  # Mappe le port 3001 de l'hôte au port 3001 du conteneur
+    env_file:
+        - .env  # Charger les variables d'environnement depuis un fichier .env
+    volumes:
+        - ./:/usr/src/app  # Monte le répertoire local dans le conteneur pour développement en direct
+    command: npm run start:prod  # Commande pour démarrer l'application
+    restart: unless-stopped  # Redémarre le conteneur en cas de crash
