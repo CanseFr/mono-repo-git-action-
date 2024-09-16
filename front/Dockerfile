@@ -1,20 +1,20 @@
-# Utilise une version plus récente de Node.js
-FROM node:18-alpine
+# pull official base image
+FROM node:13.12.0-alpine
 
-# Définit le répertoire de travail dans le conteneur
+# set working directory
 WORKDIR /app
 
-# Copie les fichiers de dépendances
-COPY front/package.json ./
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
-# Installe les dépendances
-RUN npm install --silent && npm install react-scripts@3.4.1 -g --silent
+# install app dependencies
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install --silent
+RUN npm install react-scripts@3.4.1 -g --silent
 
-# Copie tout le code de l'application
-COPY ./front .
+# add app
+COPY . ./
 
-# Expose le port 3000 (si ton app tourne sur ce port)
-EXPOSE 3000
-
-# Démarre l'application
+# start app
 CMD ["npm", "start"]
